@@ -1,27 +1,24 @@
-// Requisita as classes necessarias do discord.js
-const { Client, Intents } = require("discord.js")
-const config = require("./config.json")
+const Discord = require("discord.js"); 
+const intents = ["GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_PRESENCES"];
+const client = new Discord.Client({
+    intents: intents,
+    ws: { intents: intents },
+}); 
 
-
-// Add the Intents that the Bot will use
-// Discord API for the Intents: https://discord.com/developers/docs/topics/gateway#list-of-intents
-const myIntents = new Intents()
-myIntents.add(Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_PRESENCES)
-
-
-// Create a new client instance
-const client = new Client({ intents: myIntents})
-
+const config = require("./config.json");
+const welcome = require("./welcome.js");
 
 // When the client is ready, run this code (only once)
 // Used for testing on the server but only runs on your PC
 client.on('ready', () => {
 	console.log('Ready!')
-})
+
+	welcome(client)
+});
 
 // prefixo é o comando necessário para chamar o bot
 const prefix = "//"
-client.on("message", (message) =>{
+client.on("messageCreate", (message) =>{
 	// Evita que o Bot responda outro Bot, responda um DM ou que ele responda sem ser chamado o prefixo
 	if (message.author.bot == true) return
 	if (message.channel.type == "dm") return
@@ -49,7 +46,7 @@ client.on("message", (message) =>{
 		default: message.channel.send("Comando não reconhecido")
 		break;
 	}
-})
+});
 
 // Login to Discord with your client's token
-client.login(config.token)
+client.login(config.token);
