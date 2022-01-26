@@ -1,4 +1,4 @@
-// Require the necessary discord.js classes
+// Requisita as classes necessarias do discord.js
 const { Client, Intents } = require("discord.js")
 const config = require("./config.json")
 
@@ -14,13 +14,15 @@ const client = new Client({ intents: myIntents})
 
 
 // When the client is ready, run this code (only once)
+// Used for testing on the server but only runs on your PC
 client.on('ready', () => {
 	console.log('Ready!')
 })
 
+// prefixo é o comando necessário para chamar o bot
 const prefix = "//"
 client.on("message", (message) =>{
-	// Evita que o Bot responda outro Bot, responda o DM ou que ele responda sem ser chamado o prefixo
+	// Evita que o Bot responda outro Bot, responda um DM ou que ele responda sem ser chamado o prefixo
 	if (message.author.bot == true) return
 	if (message.channel.type == "dm") return
 	if (!message.content.startsWith(prefix)) return
