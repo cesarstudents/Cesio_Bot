@@ -9,8 +9,8 @@ module.exports = (client) => {
 
   // Atribui o nome do emoji para o cargo ao lado
   const emojis = {
-    kingsip: 'Ciência da Computação',
-    honklerclown: 'Design',
+    coffeePanda: 'Ciência da Computação',
+    almigthyloaf: 'Design',
   }
 
   const reactions = []
