@@ -1,11 +1,13 @@
+// Chama a função first_message do arquivo
 const first_message = require('./first_message')
 
 module.exports = (client) => {
-  const role_id = '797506749153673266'
+  const role_id = '797506749153673266' // Canal de cargos
 
-  const get_emoji = (emojiName) =>
-    client.emojis.cache.find((emoji) => emoji.name === emojiName)
+  // Pega o emoji baseado no nome, funciona apenas com emojis customizados (próprios do servidor) e não Globais
+  const get_emoji = (emojiName) => client.emojis.cache.find((emoji) => emoji.name === emojiName)
 
+  // Atribui o nome do emoji para o cargo ao lado
   const emojis = {
     kingsip: 'Ciência da Computação',
     honklerclown: 'Design',
@@ -13,7 +15,10 @@ module.exports = (client) => {
 
   const reactions = []
 
+  // mensagem enviada pelo bot
   let emoji_text = 'Clique no ícone respectivo ao seu curso para ter acesso aos conteúdos do servidor :D\n\n'
+  
+  // procura o emoji pedido e insere ele no emoji_text
   for (const key in emojis) {
     const emoji = get_emoji(key)
     reactions.push(emoji)
@@ -24,6 +29,7 @@ module.exports = (client) => {
 
   first_message(client, role_id, emoji_text, reactions)
 
+  // Impede que a reação do bot de a si mesmo o cargo
   const handle_reaction = (reaction, user, add) => {
     if (user.id === '935595775860293632') {
       return
@@ -48,12 +54,14 @@ module.exports = (client) => {
     }
   }
 
+  // Adiciona o cargo quando clica no emoji
   client.on('messageReactionAdd', (reaction, user) => {
     if (reaction.message.channel.id === role_id) {
       handle_reaction(reaction, user, true)
     }
   })
 
+  // Remove o cargo quando clica no emoji novamente
   client.on('messageReactionRemove', (reaction, user) => {
     if (reaction.message.channel.id === role_id) {
       handle_reaction(reaction, user, false)

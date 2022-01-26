@@ -11,8 +11,9 @@ const commands = require("./commands.js")
 const role_claim = require("./role_claim.js")
 const rule_claim = require("./rule_claim.js")
 
-// When the client is ready, run this code (only once)
-// Used for testing on the server but only runs on your PC
+
+// quando o client estiver pronto ele vai rodar o codigo;
+// usado para testes no servidor, porem usa seu PC como servidor local
 client.on('ready', () => {
 	console.log('Ready!')
 
@@ -22,5 +23,5 @@ client.on('ready', () => {
 	rule_claim(client);
 });
 
-// Login to Discord with your client's token
+// Da login no discord usando o token do bot
 client.login(config.token);
