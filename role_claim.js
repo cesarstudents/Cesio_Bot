@@ -10,7 +10,7 @@ module.exports = (client) => {
   // Atribui o nome do emoji para o cargo ao lado
   const emojis = {
     coffeePanda: 'Ciência da Computação',
-    almigthyloaf: 'Design',
+    almitghyloaf: 'Design',
   }
 
   const reactions = []
