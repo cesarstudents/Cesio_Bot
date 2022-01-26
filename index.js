@@ -18,32 +18,38 @@ client.on('ready', () => {
 	console.log('Ready!')
 })
 
+const prefix = "//"
 client.on("message", (message) =>{
-	// Evita que o Bot responda outro Bot e que responda DM
+	// Evita que o Bot responda outro Bot, responda o DM ou que ele responda sem ser chamado o prefixo
 	if (message.author.bot == true) return
 	if (message.channel.type == "dm") return
+	if (!message.content.startsWith(prefix)) return
 
+	// Corta o prefixo da mensagem e pega apenas o comando em si
+	const argument = message.content.slice(prefix.length)
 
-	if (message.content == "//oi"){
-		message.channel.send("comi o cu de quem ta lendo")
-	}
-	
-	if (message.content == "//69"){
-		message.channel.send("Eta bixo secso kkkkk")
-	}
+	switch(argument) {
+		case "help": message.channel.send ("Comandos Disponiveis:\n//oi\n//420\n//69\n//gay\n//windows")
+		break;
 
-	if (message.content == "//help"){
-		message.channel.send("Comandos Disponiveis:\n//oi\n//69\n//gay\n//windows")
-	}
+		case "oi": message.channel.send ("Olá :wave:")
+		break;
 
-	if (message.content == "//gay"){
-		message.channel.send("https://pics.me.me/ur-the-biggest-gay-36954314.png")
-	}
+		case "420": message.channel.send ("Smoke Weed Everyday")
+		break;
 
-	if (message.content == "//windows"){
-		message.channel.send("O cara usa windows mano mt troxa pqp kkkkkk")
+		case "69": message.channel.send ("Eta bixo secso kkkkk")
+		break;
+
+		case "gay": message.channel.send ("https://pics.me.me/ur-the-biggest-gay-36954314.png")
+		break;
+		
+		case "windows": message.channel.send ("O cara usa windows mano mt troxa pqp kkkkkk")
+		break;
+
+		default: message.channel.send("Ocê é burro carai? Tem esse comando não, digita //help aí.")
+		break;
 	}
-	
 })
 
 // Login to Discord with your client's token
