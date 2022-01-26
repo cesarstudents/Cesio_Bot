@@ -9,6 +9,7 @@ const config = require("./config.json");
 const welcome = require("./welcome.js");
 const commands = require("./commands.js")
 const role_claim = require("./role_claim.js")
+const rule_claim = require("./rule_claim.js")
 
 // When the client is ready, run this code (only once)
 // Used for testing on the server but only runs on your PC
@@ -18,9 +19,8 @@ client.on('ready', () => {
 	welcome(client);
 	commands(client);
 	role_claim(client);
+	rule_claim(client);
 });
-
-
 
 // Login to Discord with your client's token
 client.login(config.token);
