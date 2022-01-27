@@ -1,3 +1,4 @@
+// Mensagem do canal de Regras
 const add_reactions = (message, reactions) => {
 	message.react(reactions[0])
 	reactions.shift()

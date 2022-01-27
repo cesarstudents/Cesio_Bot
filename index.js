@@ -1,3 +1,4 @@
+// Atribui os intents (permissões do Bot)
 const Discord = require("discord.js"); 
 const intents = ["GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS", "GUILD_PRESENCES"];
 const client = new Discord.Client({

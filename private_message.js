@@ -1,3 +1,4 @@
+// Envia uma mensagem no privado da pessoa que entrou no servidor
 module.exports = client => {
 	client.on("guildMemberAdd", member => {
 		member.send(`Olá, meu nome é Césio eu sou um bot criado por alunos da CESAR School.
