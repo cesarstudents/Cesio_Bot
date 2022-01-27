@@ -1,5 +1,5 @@
 module.exports = client => {
-	client.on("guildMemberAdd", (member) => {
+	client.on("guildMemberAdd", member => {
 		const welcome_channel = "797506896499179560"; // Welcome Channel 
 		const rules_channel = "796529332562559016" // Canal de Regras
 		console.log(member);
@@ -10,3 +10,4 @@ module.exports = client => {
 		channel.send(message);
 	})
 }
+

@@ -32,6 +32,15 @@ module.exports = client => {
 			message.channel.send(randomMessage)
 			break;
 
+			/*case "msg":
+						// ID Matheus 673223426831417384
+						// ID Borges 208677439071715329
+						// ID Rennan 351103168265977856
+			client.users.fetch('351103168265977856', false).then((user) => {
+				user.send("https://c.tenor.com/E20nFp3PjvoAAAAC/troll-face.gif");
+			});
+			break;*/
+
 			default: message.channel.send("Comando não reconhecido")
 			break;
 		}
