@@ -1,3 +1,6 @@
+
+// encontrar alguma maneira de deixar esse código mais clean com os comandos que se ramificam
+// como os de matemática por exemplo, talvez importar uma função um arquivo separado?
 module.exports = client => {
 	
 	const prefix = "//"
@@ -9,10 +12,44 @@ module.exports = client => {
 
 		// Corta o prefixo da mensagem e pega apenas o comando em si
 		const argument = message.content.slice(prefix.length)
+		const studies_id = "877923617755762738" // Canal de Estudos
 
 		switch(argument) {
-			case "help": message.channel.send ("Comandos Disponiveis:\n//oi\n//69\n//gay\n//windows")
+			case "help": message.channel.send ("Olá você precisa de ajuda com qual matéria?\n\n//math => Matemática\n\n//prog => Programação\n\n//sd => Sistemas Digitais")
 			break;
+
+			case "math": message.channel.send("//tv => Tabela Verdade\n\n//ga => Geometria Analítica\n\n//lim => Limites\n\n//dv => Derivada\n\n//int => Integral")
+			break;
+
+			// Tabela Verdade
+			case "tv":
+			message.channel.send(`Caso você prefira material por escrito nós temos o Manual de Sobrevivência Escolar do Teemo (Capítulo 3) no canal de ${message.guild.channels.cache.get(studies_id).toString()}
+\nCaso você prefira material em vídeo, nós recomendamos essa playlist: https://www.youtube.com/playlist?list=PLqIjEAO7h65-fxPjuFg2k70i0z-pwQYG3`)
+			break;
+
+			// Geometria Analítica
+			case "ga":message.channel.send(`Caso você prefira material por escrito nós temos o Manual de Sobrevivência Escolar do Teemo (Capítulo 3) no canal de ${message.guild.channels.cache.get(studies_id).toString()}
+\nCaso você prefira material em vídeo, nós recomendamos essas playlists: https://www.youtube.com/playlist?list=PLEfwqyY2ox858XssXB_f-Jx42fgTb0Vsn`)
+			break;
+
+			// Limites
+			case "lim": message.channel.send(`Caso você prefira material por escrito nós temos o Manual de Sobrevivência Escolar do Teemo (Capítulo 3) no canal de ${message.guild.channels.cache.get(studies_id).toString()}
+\nCaso você prefira material em vídeo, nós recomendamos essas playlists:\n\nAprendo melhor por exercícios e direto pondo a mão na massa: https://www.youtube.com/playlist?list=PLqIjEAO7h659dJ1T2fyx-af2j88m3Cuzx
+			\n\nAprendo melhor com alguém explicando o passo a passo devagar: https://www.youtube.com/playlist?list=PLqIjEAO7h658dPptzuxubquxkYgI3Nr8s`)
+			break;
+
+			// Derivada
+			case "dv": message.channel.send(`Caso você prefira material por escrito nós temos o Manual de Sobrevivência Escolar do Teemo (Capítulo 3) no canal de ${message.guild.channels.cache.get(studies_id).toString()}
+\nCaso você prefira material em vídeo, nós recomendamos essas playlists:\n\nAprendo melhor por exercícios e direto pondo a mão na massa: https://www.youtube.com/playlist?list=PLqIjEAO7h658IrRBpT6hpYw3x37tEBQwt
+			\n\nAprendo melhor com alguém explicando o passo a passo devagar: https://www.youtube.com/playlist?list=PLqIjEAO7h65_lvjJLocbaUVSJDIX1h-WP`)
+			break;
+
+			// Integral
+			case "int":message.channel.send(`Caso você prefira material por escrito nós temos o Manual de Sobrevivência Escolar do Teemo (Capítulo 3) no canal de ${message.guild.channels.cache.get(studies_id).toString()}
+\nCaso você prefira material em vídeo, nós recomendamos essa playlist: https://www.youtube.com/playlist?list=PLqIjEAO7h659hBa76f9061cRcK3AplLjh`)
+			break;
+
+			case "comandos": message.channel.send("Comandos Disponiveis:\n//oi\n//69\n//gay\n//windows")
 
 			case "oi": message.channel.send ("Olá :wave:")
 			break;
@@ -36,8 +73,8 @@ module.exports = client => {
 						// ID Matheus 673223426831417384
 						// ID Borges 208677439071715329
 						// ID Rennan 351103168265977856
-			client.users.fetch('351103168265977856', false).then((user) => {
-				user.send("https://c.tenor.com/E20nFp3PjvoAAAAC/troll-face.gif");
+			client.users.fetch('397564412539568128', false).then((user) => {
+				user.send("Olá arthur como vai? Eu sou um bot criado pelo meu mestre supremo para manusear o servidor da faculdade CESAR School, vim aqui lhe perguntar, como está sendo sua jogatina de Wizard101?");
 			});
 			break;*/
 
