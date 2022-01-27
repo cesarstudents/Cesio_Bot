@@ -6,6 +6,9 @@ const client = new Discord.Client({
     ws: { intents: intents },
 }); 
 
+//const WOKCommands = require('wokcommands')
+//const path = require('path')
+
 // Chama as funções necessárias dos arquivos para rodar as mesmas
 const config = require("./config.json");
 const welcome = require("./welcome.js");
@@ -19,6 +22,9 @@ const private_message = require("./private_message.js")
 client.on('ready', () => {
 	console.log('Ready!')
 
+	/*new WOKCommands(client, {
+		commandsDir: path.join(__dirname, "commands")
+	})*/
 	welcome(client);
 	private_message(client)
 	commands(client);

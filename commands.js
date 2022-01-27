@@ -1,6 +1,8 @@
 
 // encontrar alguma maneira de deixar esse código mais clean com os comandos que se ramificam
 // como os de matemática por exemplo, talvez importar uma função um arquivo separado?
+// Algum dia fazer um upgrade nisso, mucho texto, ruim para o usuário, talvez traduzir isso para botões?
+// Criar uma instância própria onde apenas o usuário tem acesso a, evitando poluição.
 module.exports = client => {
 	
 	const prefix = "//"
