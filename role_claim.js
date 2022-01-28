@@ -1,5 +1,5 @@
-// Chama a função first_message do arquivo
-const first_message = require('./first_message')
+// Chama a função role_message do arquivo
+const role_message = require('./role_message')
 
 module.exports = (client) => {
   const role_id = '797506749153673266' // Canal de cargos
@@ -27,7 +27,7 @@ module.exports = (client) => {
 		emoji_text += `${emoji} = ${role}\n`
 	}
 
-	first_message(client, role_id, emoji_text, reactions)
+	role_message(client, role_id, emoji_text, reactions)
 
 	// Impede que a reação do bot de a si mesmo o cargo
 	const handle_reaction = (reaction, user, add) => {

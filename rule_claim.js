@@ -1,5 +1,5 @@
-// Chama a função second_message do arquivo
-const second_message = require('./second_message.js')
+// Chama a função rule_message do arquivo
+const rule_message = require('./rule_message.js')
 
 module.exports = (client) => {
 	const rule_id = '796529332562559016' // Canal de Regras
@@ -26,7 +26,7 @@ module.exports = (client) => {
 		emoji_text += `${emoji} = ${role}\n`
 	}
 
-	second_message(client, rule_id, emoji_text, reactions)
+	rule_message(client, rule_id, emoji_text, reactions)
 
 	// Impede que a reação do bot de a si mesmo o cargo
 	const handle_reaction = (reaction, user, add) => {
