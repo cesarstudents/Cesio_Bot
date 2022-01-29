@@ -4,7 +4,7 @@ module.exports = {
 	category: "testing",
 	description: "testing",
 
-	slash: "both",
+	slash: true,
 	testOnly: true,
 
 	callback: async ({ interaction, channel}) => {
