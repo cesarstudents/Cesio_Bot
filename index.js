@@ -9,7 +9,7 @@ const client = new Discord.Client({
 const WOKCommands = require('wokcommands')
 const path = require('path')
 
-// Chama as funções necessárias dos arquivos para rodar as mesmas
+// Chama as funções necessárias dos arquivos
 const config = require("./config.json");
 const welcome = require("./welcome.js");
 const commands = require("./commands.js")
@@ -18,14 +18,13 @@ const rule_claim = require("./rule_claim.js")
 const private_message = require("./private_message.js")
 
 // quando o client estiver pronto ele vai rodar o codigo;
-// usado para testes no servidor, porem usa seu PC como servidor local
 client.on('ready', () => {
 	console.log('Ready!')
 
 	new WOKCommands(client, {
 		commandsDir: path.join(__dirname, "commands"),
 		testServers: ["796454602723426325"]
-	})
+	}) .setDefaultPrefix('//')
 
 	welcome(client);
 	private_message(client)

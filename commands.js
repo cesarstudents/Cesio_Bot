@@ -85,9 +85,6 @@ module.exports = client => {
 				user.send("Olá arthur como vai? Eu sou um bot criado pelo meu mestre supremo para manusear o servidor da faculdade CESAR School, vim aqui lhe perguntar, como está sendo sua jogatina de Wizard101?");
 			});
 			break;*/
-
-			default: message.channel.send("Comando não reconhecido")
-			break;
 		}
 	});
 }

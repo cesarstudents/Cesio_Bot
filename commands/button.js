@@ -4,7 +4,7 @@ module.exports = {
 	category: "testing",
 	description: "testing",
 
-	slash: true,
+	slash: "both",
 	testOnly: true,
 
 	callback: async ({ interaction, channel}) => {
@@ -52,6 +52,7 @@ module.exports = {
 		})
 
 		// Mostra o Id do usuario e o botao clicado no terminal
+		// Apenas para testes não é necessario
 		collector.on("end", async collection =>{
 			collection.forEach((click) => {
 				console.log(`${click.user.tag}`, click.customId)
