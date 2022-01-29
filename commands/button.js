@@ -10,27 +10,27 @@ module.exports = {
 	callback: async ({ interaction, channel}) => {
 		const row = new MessageActionRow()
 		.addComponents(
+
 			new MessageButton()
 			.setCustomId("ban_yes")
 			.setEmoji("🔨")
 			.setLabel("Confirm")
-			.setStyle("SUCCESS")
-		)
-
-		.addComponents(
+			.setStyle("SUCCESS"),
+		
 			new MessageButton()
 			.setCustomId("ban_no")
 			.setLabel("Cancel")
 			.setStyle("DANGER")
 		)
+		
 
-			const linkRow = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-				.setURL("https://discord.com/channels/796454602723426325/877923775742640138/877924281865080832")
-				.setLabel("📖 Estudos")
-				.setStyle("LINK")
-			)
+		const linkRow = new MessageActionRow()
+		.addComponents(
+			new MessageButton()
+			.setURL("https://discord.com/channels/796454602723426325/877923775742640138/877924281865080832")
+			.setLabel("📖 Estudos")
+			.setStyle("LINK")
+		)
 
 		await interaction.reply({
 			content: "are you sure?",
@@ -50,10 +50,8 @@ module.exports = {
 			})
 		})
 
-		collector.on("end", async (collection) =>{
-			collector.forEach((click) => {
-				console.log(click.user.id, click.customId)
-			})
+		collector.on("end", async collection =>{
+			console.log(`Collected ${collection.size} interactions.`)
 		})
 
 		await interaction.editReply({
