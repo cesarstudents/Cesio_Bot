@@ -40,23 +40,22 @@ module.exports = {
 
 		const collector = channel.createMessageComponentCollector({
 			max: 1,
-			time: 15
+			time: 1000 * 15
 		})
 
-		collector.on("collect", interaction =>{
-			interaction.reply({
+		// edita a mensagem quando receber a interação
+		collector.on("collect", i =>{
+			i.reply({
 				content: "You clicked a button",
 				ephemeral: true
 			})
 		})
 
+		// Mostra o Id do usuario e o botao clicado no terminal
 		collector.on("end", async collection =>{
-			console.log(`Collected ${collection.size} interactions.`)
-		})
-
-		await interaction.editReply({
-			content: "An action has been taken",
-			components: [],
+			collection.forEach((click) => {
+				console.log(`${click.user.tag}`, click.customId)
+			});
 		})
 	}
 
