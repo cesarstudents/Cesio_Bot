@@ -63,15 +63,10 @@ module.exports = client => {
 \nCaso você prefira material em vídeo, nós recomendamos essa playlist: https://www.youtube.com/playlist?list=PLqIjEAO7h659hBa76f9061cRcK3AplLjh`)
 			break;
 
-			case "comandos": message.channel.send("Comandos Disponiveis:\n//oi\n//69\n//gay\n//windows")
-
-			case "oi": message.channel.send ("Olá :wave:")
+			case "prog":message.channel.send("Para programação em python nós recomendamos essa playlist do nosso deus guanabara: https://www.youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0")
 			break;
 
-			case "69": message.channel.send ("Eta bixo secso kkkkk")
-			break;
-
-			case "gay": message.channel.send ("https://pics.me.me/ur-the-biggest-gay-36954314.png")
+			case "sd":message.channel.send(`Case você prefira um guia escrito nós temos o Manual de Sobrevivência escolar do Teemo (Capítulo 2): ${message.guild.channels.cache.get(studies_id).toString()}`)
 			break;
 			
 			case "windows": message.channel.send ("O cara usa windows mano, mt troxa pqp kkkkkk")
@@ -85,9 +80,6 @@ module.exports = client => {
 				user.send("Olá arthur como vai? Eu sou um bot criado pelo meu mestre supremo para manusear o servidor da faculdade CESAR School, vim aqui lhe perguntar, como está sendo sua jogatina de Wizard101?");
 			});
 			break;*/
-
-			default: message.channel.send("Comando não reconhecido")
-			break;
 		}
 	});
 }

@@ -23,7 +23,6 @@ module.exports = {
 			.setStyle("DANGER")
 		)
 		
-
 		const linkRow = new MessageActionRow()
 		.addComponents(
 			new MessageButton()
@@ -40,23 +39,21 @@ module.exports = {
 
 		const collector = channel.createMessageComponentCollector({
 			max: 1,
-			time: 1000 * 15
-		})
-
-		// edita a mensagem quando receber a interação
-		collector.on("collect", i =>{
-			i.reply({
-				content: "You clicked a button",
-				ephemeral: true
-			})
+			time: 1000 * 15 // 15sec
 		})
 
 		// Mostra o Id do usuario e o botao clicado no terminal
+		// Apenas para testes não é necessario
 		collector.on("end", async collection =>{
 			collection.forEach((click) => {
 				console.log(`${click.user.tag}`, click.customId)
 			});
 		})
-	}
 
+		await interaction.editReply({
+			content: "done",
+			components: [row, linkRow],
+			ephemeral: true
+		})
+	}
 }
