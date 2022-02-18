@@ -19,7 +19,11 @@ module.exports = {
 		const reply = `${size} Mensagens foram deletadas`
 		
 		// Envia a mensagem ^^^^^^ e delete logo em seguida
+<<<<<<< HEAD
 		channel.send(reply).then(sentMessage => {setTimeout(() => sentMessage.delete(), 1000)}).catch(console.error)
+=======
+		channel.send(reply).then(sentMessage => {setTimeout(() => sentMessage.delete(), 2000)}).catch(console.error)
+>>>>>>> 6872a1c8602cb97fe95a0f84e3db308054a4b57c
 
 	}
 }

@@ -24,7 +24,11 @@ client.on('ready', () => {
 	new WOKCommands(client, {
 		commandsDir: path.join(__dirname, "commands"),
 		testServers: ["796454602723426325"]
+<<<<<<< HEAD
 	}) .setDefaultPrefix('!')
+=======
+	}) .setDefaultPrefix('//')
+>>>>>>> 6872a1c8602cb97fe95a0f84e3db308054a4b57c
 
 	welcome(client);
 	private_message(client)
